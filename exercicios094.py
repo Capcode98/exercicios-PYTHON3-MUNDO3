@@ -1,29 +1,35 @@
 pessoas = list()
-mulheres = list()
 pessoas_idosas = list()
+pessoa = list()
 
+mulheres = dict()
 nomes = dict()
 sexos = dict()
 idades = dict()
 
-k = 0
+z = 0
 
 while True:
-    pessoa = list()
 
-    nomes[f'nome {k}'] = str(input('digite o nome:')).strip()
-    sexos[f'sexo {k}'] = str(input('digite o sexo:')).strip()
-    idades[f'idade {k}'] = int(str(input('digite a idade:')).strip())
+    nomes[f'nome {z}'] = str(input('digite o nome:')).strip()
+    sexos[f'sexo {z}'] = str(input('digite o sexo:')).strip().upper()
+    idades[z] = int(str(input('digite a idade:')).strip())
 
-    pessoa.append(nomes[f'nome {k}'])
-    pessoa.append(sexos[f'sexo {k}'])
-    pessoa.append(idades[f'idade {k}'])
+    pessoa.append(nomes[f'nome {z}'])
+    pessoa.append(sexos[f'sexo {z}'])
+    pessoa.append(idades[z])
+
+    if sexos[f'sexo {z}'] == 'F':
+
+        mulheres[f'{z}'] = nomes[f'nome {z}']
+        print(z)
+        print(mulheres)
 
     pessoas.append(pessoa[:])
 
     pessoa.clear()
 
-    k += 1
+    z += 1
 
     while True:
         r = str(input('deseja continuar? [S/N]')).strip().upper()
@@ -39,8 +45,15 @@ media = 0
 for c in idades.values():
     media += c
 
-Media = media/k
+Media = media/z
 
-print(f'A quantidade de pessoas cadastradas foram {k}\nA média de idade do grupo foi {Media}\n'
-      f'As mulheres cadastradas foram: {mulheres}\nAs pessoas com idade a cima da media foram: {pessoas_idosas}')
-print(f'{pessoas} \n {nomes}\n{sexos}\n{idades}')
+for k, v in idades.items():
+    if v > Media:
+
+        pessoas_idosas.append(nomes[f'nome {k}'])
+        pessoas_idosas.append(sexos[f'sexo {k}'])
+        pessoas_idosas.append(idades[k])
+
+print(f'A quantidade de pessoas cadastradas foram {z}.\nA média de idade do grupo foi {Media} anos.\n'
+      f'As mulheres cadastradas foram: {mulheres.values()}.\n'
+      f'As pessoas com idade acima da media foram: {pessoas_idosas}.')
