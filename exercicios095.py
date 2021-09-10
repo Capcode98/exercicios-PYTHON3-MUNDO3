@@ -1,7 +1,8 @@
 jogador = dict()
 
+
 while True:
-    
+
     jogador['Nome'] = str(input('digite o nome do jogador: ')).strip().capitalize()
     jogador['Jogos'] = int(str(input('digite a quantidade de jogos do jogador: ')).strip().capitalize())
 
