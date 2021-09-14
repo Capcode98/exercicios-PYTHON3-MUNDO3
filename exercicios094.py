@@ -12,8 +12,27 @@ z = 0
 while True:
 
     nomes[f'nome {z}'] = str(input('digite o nome:')).strip()
-    sexos[f'sexo {z}'] = str(input('digite o sexo:')).strip().upper()
-    idades[z] = int(str(input('digite a idade:')).strip())
+
+    while True:
+
+        s = str(input('digite o sexo:[M/F]')).strip().upper()[0]
+
+        if s == 'M' or s == 'F':
+
+            break
+
+    sexos[f'sexo {z}'] = s
+
+    while True:
+
+        i = str(input('digite a idade:')).strip()[0]
+
+        if i.isnumeric():
+
+            num = int(i)
+            break
+
+    idades[z] = num
 
     pessoa.append(nomes[f'nome {z}'])
     pessoa.append(sexos[f'sexo {z}'])
@@ -35,8 +54,11 @@ while True:
         r = str(input('deseja continuar? [S/N]')).strip().upper()
 
         if r == 'S' or r == 'N':
+
             break
+
     if r == 'N':
+
         break
 
 
