@@ -25,7 +25,7 @@ while True:
 
     while True:
 
-        i = str(input('digite a idade:')).strip()[0]
+        i = str(input('digite a idade:')).strip()
 
         if i.isnumeric():
 
@@ -41,8 +41,6 @@ while True:
     if sexos[f'sexo {z}'] == 'F':
 
         mulheres[f'{z}'] = nomes[f'nome {z}']
-        print(z)
-        print(mulheres)
 
     pessoas.append(pessoa[:])
 
@@ -51,6 +49,7 @@ while True:
     z += 1
 
     while True:
+
         r = str(input('deseja continuar? [S/N]')).strip().upper()
 
         if r == 'S' or r == 'N':
@@ -70,6 +69,7 @@ for c in idades.values():
 Media = media/z
 
 for k, v in idades.items():
+
     if v > Media:
 
         pessoas_idosas.append(nomes[f'nome {k}'])
@@ -77,5 +77,8 @@ for k, v in idades.items():
         pessoas_idosas.append(idades[k])
 
 print(f'A quantidade de pessoas cadastradas foram {z}.\nA média de idade do grupo foi {Media} anos.\n'
-      f'As mulheres cadastradas foram: {mulheres.values()}.\n'
-      f'As pessoas com idade acima da media foram: {pessoas_idosas}.')
+      f'As mulheres cadastradas foram:', end='')
+for q in mulheres.values():
+    print(f'{q} ', end='')
+print()
+print(f'As pessoas com idade acima da media foram: {pessoas_idosas}.')

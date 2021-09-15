@@ -34,11 +34,13 @@ while True:
         print(jogador)
 
         print(f'-=' * 30)
-        print(f'No.  Nome             gols         total\n')
+        print(f'No.   Nome             gols            total\n')
+        print(f'-=' * 30)
 
         for k in range(0, len(jogadores)):
 
-            print(f'{k}    {jogadores[k]["Nome"]}              {jogadores[k]["golos"]}           {jogadores[k]["tot"]}')
+            print(f'{str(k).ljust(3)}   {jogadores[k]["Nome"].ljust(15)}  {str(jogadores[k]["golos"]).ljust(16)}'
+                  f'{jogadores[k]["tot"]}')
         print(f'-=' * 30)
 
         while True:
