@@ -1,6 +1,11 @@
 def leiaint(txt):
-    numero = input(txt)
-    return
+    while True:
+        numero = input(txt)
+        if numero.isnumeric() is True:
+            break
+        else:
+            print("Tipo de dado incorreto, digite apenas Números, por favor! ")
+    return print(numero)
 
 
-n = leiaint('Digite um valor numerico: ')
+leiaint('Digite um valor numerico: ')
