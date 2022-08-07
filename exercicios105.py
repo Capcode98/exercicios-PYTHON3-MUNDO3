@@ -1,4 +1,10 @@
 def notas(* num, sit=False):
+    """
+    Ajuda função notas:
+    :param num: desempacota os inumeros parametros passados
+    :param sit: mostra a situação das medias ou não
+    :return: retorna o print do dicionário
+    """
 
     dicionario = dict()
 
