@@ -5,7 +5,7 @@ from socket import gethostbyname, create_connection
 def verificacao(site):
 
     try:
-        create_connection((gethostbyname(site), 80), 2)
+        create_connection((gethostbyname(site), 80))
 
     except socket.gaierror:
         return print(f"\033[31mERRO 404: Site não encontrado,"
