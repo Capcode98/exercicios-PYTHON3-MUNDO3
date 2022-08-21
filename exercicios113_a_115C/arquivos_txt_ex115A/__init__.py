@@ -1,3 +1,6 @@
+from os import remove
+
+
 def AdicionarPessoas(nome_do_arquivo, txt=''):
 
     nome_do_arquivo = f'exercicios113_a_115C/arquivos_txt_ex115A/arquivos_de_texto/{nome_do_arquivo}'
@@ -96,3 +99,15 @@ def CriacaoDoArquivo(nome_do_arquivo, txt=''):
     finally:
 
         arquivo.close()
+
+
+def DeletarArquivo(nome_do_arquivo):
+    nome_do_arquivo = f'exercicios113_a_115C/arquivos_txt_ex115A/arquivos_de_texto/{nome_do_arquivo}'
+    try:
+        remove(nome_do_arquivo)
+    except Exception as error:
+        return print(f"\033[31mERRO {error.__class__}: Arquivo não encontrado,"
+                     f" verifique e tente novamente, por favor! \033[m")
+    else:
+        return print(f'\033[32mArquivo removido com sucesso!\033[m\nnome do arquivo: '
+                     f'{nome_do_arquivo}')
