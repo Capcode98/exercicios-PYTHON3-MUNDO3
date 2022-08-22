@@ -8,6 +8,7 @@ def Menu():
     print(f'\033[35m 1 :\033[m\033[32m ~Ver pessoas cadastradas!\033[m')
     print(f'\033[35m 2 :\033[m\033[33m ~Cadastrar uma nova pessoa!\033[m')
     print(f'\033[35m 3 :\033[m\033[34m ~Sair do Sistema!\033[m')
+    print('-' * 45)
 
 
 def ContagemRegressiva():
