@@ -39,13 +39,17 @@ while True:
 
         except FileNotFoundError:
 
-            CriacaoDoArquivo(nome_do_arquivo, txt='cadastro de pessoas:')
+            if opcao == 3:
+
+                break
+
+            c = input('O Arquivo ainda não exeste, Deseja Criar ? (S/N) :').strip().upper()
+
+            if c == "S":
+
+                CriacaoDoArquivo(nome_do_arquivo, txt='cadastro de pessoas:')
 
             pass
-
-        finally:
-
-            arquivo.close()
 
         if opcao == 1:
 

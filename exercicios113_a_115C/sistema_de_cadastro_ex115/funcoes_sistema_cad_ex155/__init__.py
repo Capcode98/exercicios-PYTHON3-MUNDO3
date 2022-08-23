@@ -45,7 +45,8 @@ def LeituraDePessoas(nome_do_arquivo):
     except Exception as error:
 
         return print(f"\033[31mERRO {error.__class__}: Arquivo não encontrado,"
-                     f" verifique e tente novamente, por favor! \033[m")
+                     f"\nverifique se arquivo de fato existe e tente novamente,"
+                     f"\npor favor! \033[m")
 
     else:
 
@@ -60,10 +61,6 @@ def LeituraDePessoas(nome_do_arquivo):
             print('-' * 45)
 
             return print(f'\033[32mArquivo encontrado e texto lido com sucesso!\033[m')
-
-    finally:
-
-        arquivo.close()
 
 
 def CriacaoDoArquivo(nome_do_arquivo, txt=''):
